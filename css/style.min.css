@@ -26,6 +26,9 @@ body {
     .container {
       grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 50em) {
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem); } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -194,6 +197,12 @@ body {
   justify-content: center;
   padding: 8rem;
   padding-top: 4rem; }
+  @media only screen and (max-width: 50em) {
+    .header {
+      grid-column: 1  / -1; } }
+  @media only screen and (max-width: 50em) {
+    .header {
+      padding: 5rem; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -286,12 +295,22 @@ body {
   justify-content: center;
   justify-items: center;
   padding: 3rem; }
+  @media only screen and (max-width: 50em) {
+    .realtors {
+      grid-column: 1 / -1; } }
   .realtors__list {
     align-items: center;
     display: grid;
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     grid-template-columns: min-content max-content; }
+    @media only screen and (max-width: 50em) {
+      .realtors__list {
+        grid-template-columns: repeat(3, min-content max-content); } }
+    @media only screen and (max-width: 50em) {
+      .realtors__list {
+        grid-template-columns: min-content max-content;
+        padding: 5rem; } }
   .realtors__img {
     border-radius: 50%;
     display: block;
@@ -344,21 +363,34 @@ body {
 .story__pictures {
   align-items: center;
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  background-size: cover;
   display: grid;
   grid-column: full-start / col-end 4;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr); }
+  @media only screen and (max-width: 50em) {
+    .story__pictures {
+      grid-column: 1 / -1;
+      padding: 6rem; } }
 
 .story__img--1 {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
   grid-area: 2 / 2 / span 4 / span 4;
   width: 100%; }
+  @media only screen and (max-width: 50em) {
+    .story__img--1 {
+      grid-column: 1 / 5;
+      grid-row: 1 / -1; } }
 
 .story__img--2 {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
   grid-area: 4 / 4 / span 2 / span 3;
   width: 115%;
   z-index: 20; }
+  @media only screen and (max-width: 50em) {
+    .story__img--2 {
+      grid-row: 1 / -1;
+      width: 100%; } }
 
 .story__content {
   align-items: flex-start;
@@ -368,6 +400,10 @@ body {
   grid-column: col-start 5 / full-end;
   justify-content: center;
   padding: 6rem 8vw; }
+  @media only screen and (max-width: 50em) {
+    .story__content {
+      grid-column: 1 / -1;
+      grid-row: 5 / span 1; } }
 
 .story__text {
   font-size: 1.5rem;
